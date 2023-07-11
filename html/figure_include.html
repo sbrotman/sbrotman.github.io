@@ -1,0 +1,11 @@
+<div id="figure_{figure}"></div>
+<script>
+    $.ajax({
+        url: "./html/generated/figure_{figure}.html",
+        success:
+            function(data){
+                $("#figure_{figure}").replaceWith(data);
+            },
+        cache: false
+    });
+</script>

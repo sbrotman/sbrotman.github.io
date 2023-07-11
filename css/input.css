@@ -1,0 +1,52 @@
+@tailwind base;
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.3em; vertical-align: super;}
+sub { bottom: -0.25em; vertical-align: sub;}
+
+body {
+	counter-reset: figures;
+}
+
+figure {
+    display: block;
+    border: 0.25rem solid gray;
+    border-radius: 1rem;
+    margin: 1rem; /* adjust as needed */
+    counter-increment: figures;
+}
+figure img {
+	display: block;
+	margin: 1rem auto;
+    vertical-align: middle;
+    text-align: center;
+}
+figure figcaption {
+    padding: 1rem;
+    text-align: left;
+}
+
+figure div .counter:before {
+	display: inline-block;
+	font-weight: bold;
+	content: 'Figure ' counter(figures) '.';
+	width: 6rem;
+}
+
+figure div .counter {
+	padding-right: 0rem;
+}
